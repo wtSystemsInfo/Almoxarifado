@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_os">
+
+    <fragment
+        android:id="@+id/nav_os"
+        android:name="com.example.tabalogin.ui.home.HomeFragment"
+        android:label="Taba OS"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_os_to_nav_busca_peca_os"
+            app:destination="@id/nav_busca_peca_os" />
+        <action
+            android:id="@+id/action_nav_os_to_nav_scan"
+            app:destination="@id/nav_scan" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_pesquisa"
+        android:name="com.example.tabalogin.ui.gallery.GalleryFragment"
+        android:label="Pesquisa Peça"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_busca_peca_os"
+        android:name="com.example.tabalogin.ui.osBuscaPeca.BuscaPecaFragment"
+        android:label="Adiciona Nova Peça"
+        tools:layout="@layout/fragment_os_busca_peca" >
+        <action
+            android:id="@+id/action_nav_busca_peca_os_to_nav_os"
+            app:destination="@id/nav_os" />
+        <action
+            android:id="@+id/action_nav_busca_peca_os_to_nav_scan"
+            app:destination="@id/nav_scan" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/nav_scan"
+        android:name="com.example.tabalogin.ui.scanCodeBar.scanCodeBarFragment"
+        android:label="Scanner"
+        tools:layout="@layout/fragment_scan_code_bar" />
+    <action
+        android:id="@+id/action_nav_scan_to_nav_os"
+        app:destination="@id/nav_os" />
+    <action
+        android:id="@+id/action_nav_scan_to_nav_busca_peca_os"
+        app:destination="@id/nav_busca_peca_os" />
+
+</navigation>
